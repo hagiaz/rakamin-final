@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ProductDisplay from './components/productDisplay.vue'
+import ProductDisplay from './components/ProductDisplay.vue'
 
 export default {
   name: 'App',
