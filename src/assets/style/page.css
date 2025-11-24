@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 :root {
   --navy: #002772;
+  --navy-light: #0038b3;
   --soft-pink: #fde2ff;
   --black: #1e1e1e;
   --plum: #720060;
@@ -8,9 +9,10 @@
   --dark-gray: #3f3f3f;
   --light-gray: #dcdcdc;
   --white: #ffffff;
+  --text-secondary: #3b4756;
 
   --card-radius: 14px;
-  --card-shadow: rgba(2, 39, 114, 0.12);
+  --card-shadow: 0 14px 40px rgba(2, 39, 114, 0.12);
   --divider: rgba(13, 36, 83, 0.06);
 
   --transition-fast: 150ms ease;
@@ -22,7 +24,6 @@
   position: relative;
   font-family:
     'Plus Jakarta Sans',
-    'Inter',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -83,7 +84,7 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 8vh;
-  padding-bottom: 80px;
+  padding-bottom: 30vh;
 }
 
 .card {
@@ -91,7 +92,7 @@
   max-width: calc(100% - 40px);
   background: var(--white);
   border-radius: var(--card-radius);
-  box-shadow: 0 14px 40px rgba(0, 39, 114, 0.12);
+  box-shadow: var(--card-shadow);
   padding: 32px;
   margin-left: 20px;
   margin-right: 20px;
@@ -202,7 +203,7 @@
 
 /* === Description === */
 .description {
-  color: #3b4756;
+  color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -244,6 +245,7 @@
   font-size: 14px;
   min-width: 130px;
   border: none;
+  font-family: 'Faculty Glyphic';
   transition:
     transform var(--transition-fast),
     background var(--transition-fast),
@@ -256,19 +258,17 @@
   color: var(--white);
   box-shadow: 0 10px 20px rgba(0, 39, 114, 0.2);
   margin-right: 10px;
-  font-family: 'Faculty Glyphic';
 }
 
 .btn.next {
   background: transparent;
   color: var(--navy);
   border: 2px solid var(--navy);
-  font-family: 'Faculty Glyphic';
 }
 
 .btn.buy:hover {
   transform: translateY(-2px);
-  background: #0038b3;
+  background: var(--navy-light);
 }
 
 .btn.next:hover {
@@ -284,6 +284,13 @@
 .btn:focus {
   outline: 3px solid rgba(0, 39, 114, 0.15);
   outline-offset: 2px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
 }
 
 /* === Unavailable State === */
